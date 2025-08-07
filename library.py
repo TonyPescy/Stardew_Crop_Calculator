@@ -7,6 +7,9 @@
 # Imports
 from crop import Crop
 
+# Constants
+TO_INT_FAIL = 'F'
+
 # Welcome message for start of calc
 def welcome_mess():
     print('Hello, welcome to the Stardew Valley Crop Calculator! This tool will help you determine how much it will cost for you to fully plant and fertilize your farm.')
@@ -44,10 +47,40 @@ def seeds_to_buy():
         elif known_seeds_res == 'no':
             # Asks user for info on sprinkler types and quantity, pressure nozzles, and anything blocking potential crop locations. Then calcs number of seeds needed for their field
             print('We will now try to calculate how many seeds you will need for your field. Please answer the following questions with whole numbers.')
+
             # Sprinkler Section
-            spr = input('How many standard sprinklers do you have? (Please asnwer with a whole number as such: "5"): ')
+            while True:
+                # Repeats request for standard sprinkler number until valid answer
+                try:
+                    spr = int(input('How many standard sprinklers do you have? (Please answer with a whole number as such: 5): ').strip())
+                    if spr < 0:
+                        int(TO_INT_FAIL)
+                    break
+                except:
+                    print('Invalid resposnse. Please enter a whole number equal to or greater than 0.')
+
+            while True:
+                # Repeats request for quality sprinkler number until valid answer
+                try:
+                    qual_spr = int(input('How many quality sprinklers do you have? (Please answer with a whole number as such: 5): ').strip())
+                    if qual_spr < 0:
+                        int(TO_INT_FAIL)
+                    break
+                except:
+                    print('Invalid resposnse. Please enter a whole number equal to or greater than 0.')
+
+            while True:
+                # Repeats request for iridium sprinkler number until valid answer
+                try:
+                    iri_spr = int(input('How many iridium sprinklers do you have? (Please answer with a whole number as such: 5): ').strip())
+                    if iri_spr < 0:
+                        int(TO_INT_FAIL)
+                    break
+                except:
+                    print('Invalid resposnse. Please enter a whole number equal to or greater than 0.')
 
             print('NAN')
+            
 
         else:
             # Invalid respone for known_seeds_res

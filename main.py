@@ -9,11 +9,11 @@ import library as lib
 
 def main():
     print('MAIN TETSER: ')
-    tester = ' 25 '
+    tester = ' - 25 '
     try:
 
         tester = int(tester.strip())
-        print('tester was turned into int!')
+        print('tester was turned into int!:', tester)
     except:
         print('error converting to int')
 
