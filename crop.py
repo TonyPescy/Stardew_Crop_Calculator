@@ -13,3 +13,6 @@ class Crop:
         self.season = season
 
     
+def generate_crops():
+    print('NAN')
+
