@@ -6,6 +6,7 @@
 
 # Imports
 import library as lib
+from fertilizer import get_fertilizer_used
 
 def main():
     print('MAIN TETSER: ')
@@ -19,7 +20,10 @@ def main():
 
     # lib.welcome_mess()
     # lib.thank_you_mess()
-    test2 = lib.seeds_to_buy()
-    print('Test2:', test2)
+    # test2 = lib.seeds_to_buy()
+    # print('Test2:', test2)
+    
+    test3 = get_fertilizer_used()
+    print('Name: {} - Price: {} - Recipe: {} - Amount Crafted: {}'.format(test3.name, test3.price, test3.recipe, test3.amt_per_craft) )
 
 main()

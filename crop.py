@@ -12,7 +12,7 @@ class Crop:
         self.seed_price = seed_price
         self.season = season
 
-    
+# Creates all the variants of crops with their stats and returns a list of the ordered crop objects
 def generate_crops():
     print('NAN')
 
