@@ -6,9 +6,7 @@
 
 # Imports
 from crop import Crop
-
-# Constants
-TO_INT_FAIL = 'F'
+from sprinkler import get_number_of_sprinklers, get_number_of_nozzles, get_number_of_blocked_tiles, generate_sprinklers
 
 # Welcome message for start of calc
 def welcome_mess():
@@ -22,9 +20,9 @@ def display_info():
 def thank_you_mess():
     print('Thank you for using my Stardew Valley Crop Calculator!')
 
-
+# Using functions from sprinkler.py this will determine how many seeds the user will need to plant their whole field
 def seeds_to_buy():
-    # seeds_needed = 0
+    seeds_needed = 0
     known_seeds_res = ''
     valid_res = False
     while known_seeds_res != 'yes' and known_seeds_res != 'no':
@@ -49,42 +47,43 @@ def seeds_to_buy():
             print('We will now try to calculate how many seeds you will need for your field. Please answer the following questions with whole numbers.')
 
             # Sprinkler Section
-            while True:
-                # Repeats request for standard sprinkler number until valid answer
-                try:
-                    spr = int(input('How many standard sprinklers do you have? (Please answer with a whole number as such: 5): ').strip())
-                    if spr < 0:
-                        int(TO_INT_FAIL)
-                    break
-                except:
-                    print('Invalid resposnse. Please enter a whole number equal to or greater than 0.')
+            nums_of_spr_list = get_number_of_sprinklers() # list order is spirnkler, quality, iridium
 
-            while True:
-                # Repeats request for quality sprinkler number until valid answer
-                try:
-                    qual_spr = int(input('How many quality sprinklers do you have? (Please answer with a whole number as such: 5): ').strip())
-                    if qual_spr < 0:
-                        int(TO_INT_FAIL)
-                    break
-                except:
-                    print('Invalid resposnse. Please enter a whole number equal to or greater than 0.')
+            # Pressure Nozzle Section
+            press_noz = get_number_of_nozzles()
+            print('Note: Pressure nozzles will be applied on Iridium Sprinklers first, then Quality Sprinklers, and Sprinklers last for our calculations as that is the most efficient use of them.')
 
-            while True:
-                # Repeats request for iridium sprinkler number until valid answer
-                try:
-                    iri_spr = int(input('How many iridium sprinklers do you have? (Please answer with a whole number as such: 5): ').strip())
-                    if iri_spr < 0:
-                        int(TO_INT_FAIL)
-                    break
-                except:
-                    print('Invalid resposnse. Please enter a whole number equal to or greater than 0.')
+            # Unusable Tile Section
+            blocked_tiles = get_number_of_blocked_tiles()
 
-            print('NAN')
-            
+            # Calaulation Section
+            sprinkler_stat_list = generate_sprinklers()
 
+            if press_noz == 0:
+                seeds_needed += nums_of_spr_list[2]*sprinkler_stat_list[2].tiles_watered    # iridium sprinklers added to total
+                seeds_needed += nums_of_spr_list[1]*sprinkler_stat_list[1].tiles_watered    # quality sprinklers added to total
+                seeds_needed += nums_of_spr_list[0]*sprinkler_stat_list[0].tiles_watered    # sprinklers added to total
+            else:
+                sprinkler_total = nums_of_spr_list[2] + nums_of_spr_list[1] + nums_of_spr_list[0]
+                n = 2   # Initial value to determine sprinkler being used in for loop
+                while sprinkler_total > 0:
+                    for i in range(nums_of_spr_list[n]):
+
+                        if press_noz > 0:
+                            seeds_needed += sprinkler_stat_list[n].tiles_with_nozzle
+                            press_noz -= 1
+                            sprinkler_total -= 1
+                        else:
+                            seeds_needed += sprinkler_stat_list[n].tiles_watered
+                            sprinkler_total -= 1
+                    
+                    # update n for next sprinkler
+                    n -= 1
+                if press_noz > 0:
+                    print('You have ' + str(press_noz) + ' pressure nozzle(s) left. You should craft more sprinklers if you are able to!')
         else:
             # Invalid respone for known_seeds_res
             print('Invalid response, please enter "Yes" or "no".')
-    
-    # Returns valid number of seeds needed for next section of calc
-    return int(seeds_needed)
+            
+    seeds_needed -= blocked_tiles
+    return seeds_needed
