@@ -12,7 +12,7 @@ from sprinkler import get_number_of_sprinklers, get_number_of_nozzles, get_numbe
 def welcome_mess():
     print('Hello, welcome to the Stardew Valley Crop Calculator! This tool will help you determine how much it will cost for you to fully plant and fertilize your farm.')
 
-# 
+# Displays info calculated for the user
 def display_info():
     print('NAN')
 
