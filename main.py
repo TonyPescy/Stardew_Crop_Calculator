@@ -7,36 +7,26 @@
 # Imports
 import library as lib
 from fertilizer import get_fertilizer_used
-from crop import generate_crops, crop_auto_correct, get_crop_selection
+from crop import get_crop_selection
+from sprinkler import seeds_to_buy
 
 def main():
-    print('MAIN TETSER: ')
-    tester = ' - 25 '
-    try:
+    # welcome
+    lib.welcome_mess()
 
-        tester = int(tester.strip())
-        print('tester was turned into int!:', tester)
-    except:
-        print('error converting to int')
+    # How many crops can be grown
+    total_seeds = seeds_to_buy()
 
-    # lib.welcome_mess()
-    # lib.thank_you_mess()
-    # test2 = lib.seeds_to_buy()
-    # print('Test2:', test2)
-    
-    # test3 = get_fertilizer_used()
-    # print('Name: {} - Price: {} - Recipe: {} - Amount Crafted: {}'.format(test3.name, test3.price, test3.recipe, test3.amt_per_craft) )
+    # Ask for fertilizers used
+    fertilizer = get_fertilizer_used()
 
-    test4 = generate_crops()
+    # Get crop info
+    crop = get_crop_selection()
 
-    print(test4['corn'].gpd)
+    # display information to user
+    lib.display_info(total_seeds, fertilizer, crop)
 
-    corrections = crop_auto_correct('corn',test4)
-    for i in range(len(corrections)):
-        print(str(i+1) + '. Name:', corrections[i].name, 'Price:', corrections[i].seed_price)
+    # Exit message
+    lib.thank_you_mess()
 
-
-    test5 = get_crop_selection(test4)
-    print('Test5 Crop:', test5.name)
-    
 main()

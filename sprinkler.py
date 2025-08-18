@@ -101,7 +101,7 @@ def seeds_to_buy():
                     if int(seeds_needed) <= 0:
                         print('Please enter a number larger than 0 to proceed.')
                     else:   # Only way to exit while - Valid entry provided by user
-                        print('Valid User input!')
+                        #print('Valid User input!')
                         valid_res = True
                         break
                 except:
@@ -128,6 +128,7 @@ def seeds_to_buy():
                 seeds_needed += nums_of_spr_list[2]*sprinkler_stat_list[2].tiles_watered    # iridium sprinklers added to total
                 seeds_needed += nums_of_spr_list[1]*sprinkler_stat_list[1].tiles_watered    # quality sprinklers added to total
                 seeds_needed += nums_of_spr_list[0]*sprinkler_stat_list[0].tiles_watered    # sprinklers added to total
+                seeds_needed -= blocked_tiles
             else:
                 sprinkler_total = nums_of_spr_list[2] + nums_of_spr_list[1] + nums_of_spr_list[0]
                 n = 2   # Initial value to determine sprinkler being used in for loop
@@ -144,11 +145,12 @@ def seeds_to_buy():
                     
                     # update n for next sprinkler
                     n -= 1
+                seeds_needed -= blocked_tiles
                 if press_noz > 0:
                     print('You have ' + str(press_noz) + ' pressure nozzle(s) left. You should craft more sprinklers if you are able to!')
         else:
             # Invalid respone for known_seeds_res
             print('Invalid response, please enter "Yes" or "no".')
             
-    seeds_needed -= blocked_tiles
+    
     return seeds_needed

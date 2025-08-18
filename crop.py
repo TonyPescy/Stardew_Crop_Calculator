@@ -71,28 +71,53 @@ def generate_crops():
 
 # Uses user-inputted crop name and checks to see if there are any spelling errors or if what was entered is a valid crop
 def crop_auto_correct(crop_name, crop_dictionary):
-    possible_corrections = []
-    name_len = len(crop_name)
+    # normalize to match your dict keys (lowercase, no spaces)
+    key = ''.join(ch for ch in crop_name.lower() if ch.isalnum())
+    n = len(key)
+    letters = string.ascii_lowercase
 
-    for i in range(name_len):   # used to iterates over every letter in crop name
-        temp_name = crop_name   # resets temp_word
+    results = []
+    seen = set()
 
-        for letter1 in string.ascii_lowercase:      # changes 1 letter in crop name
-            temp_name = temp_name[:i] + letter1 + temp_name[i+1:]
-            if crop_dictionary.get(temp_name) != None and crop_dictionary.get(temp_name) not in possible_corrections:    # if not None then word is found
-                possible_corrections.append(crop_dictionary.get(temp_name)) # Adds crop object to possible corrections
-            
-            if (i+1) < name_len:
-                for letter2 in string.ascii_lowercase:  # changes a second letter in crop name
-                    temp_name = temp_name[:i+1] + letter2 + temp_name[i+2:]
-                    if crop_dictionary.get(temp_name) != None and crop_dictionary.get(temp_name) not in possible_corrections:    # if not None then word is found
-                        possible_corrections.append(crop_dictionary.get(temp_name)) # Adds crop object to possible corrections
-    
-    return possible_corrections
+    # 0-edit (exact match)
+    if key in crop_dictionary:
+        results.append(crop_dictionary[key])
+        seen.add(key)
+
+    # 1 substitution
+    for i in range(n):
+        orig_i = key[i]
+        for c1 in letters:
+            if c1 == orig_i:
+                continue
+            cand1 = key[:i] + c1 + key[i+1:]
+            if cand1 in crop_dictionary and cand1 not in seen:
+                results.append(crop_dictionary[cand1])
+                seen.add(cand1)
+
+    # 2 substitutions at any two positions
+    for i in range(n):
+        orig_i = key[i]
+        for c1 in letters:
+            if c1 == orig_i:
+                continue
+            s1 = key[:i] + c1 + key[i+1:]
+            for j in range(i+1, n):
+                orig_j = s1[j]
+                for c2 in letters:
+                    if c2 == orig_j:
+                        continue
+                    cand2 = s1[:j] + c2 + s1[j+1:]
+                    if cand2 in crop_dictionary and cand2 not in seen:
+                        results.append(crop_dictionary[cand2])
+                        seen.add(cand2)
+
+    return results
 
 
 # Will get user inputted response for which crop they would like to plant in their fields
-def get_crop_selection(crop_dictionary):
+def get_crop_selection():
+    crop_dictionary = generate_crops()
     while True:
         try:
             sugg_res = (input('Now that we know the size of your field, now we need to know what you would like to plant. Would you like suggestions? Please enter yes or no: ').lower()).strip()
@@ -140,7 +165,7 @@ def get_crop_selection(crop_dictionary):
                                 print('Sorry for the failure to find a matching crop, please try again.')
                                 break
                             else:
-                                print(corrections[corr_res-1])
+                                #print(corrections[corr_res-1])
                                 return corrections[corr_res-1]
                     except:
                         print('Invalid response, please respond with a valid number within the given range.')
