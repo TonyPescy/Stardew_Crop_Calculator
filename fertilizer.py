@@ -5,7 +5,7 @@
 #######################################################################################################################################
 
 # Import
-from sprinkler import TO_INT_FAIL
+from library import TO_INT_FAIL
 
 class Fertilizer:
     # initialize basic fertilizer information
