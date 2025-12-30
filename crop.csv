@@ -1,0 +1,35 @@
+name,seed_price,season,gold_per_day
+Blue Jazz,30,Spring,2.86
+Cauliflower,80,Spring,7.92
+Garlic,40,Spring,5
+Green Bean,60,Spring,7.2
+Kale,70,Spring,6.67
+Parsnip,20,Spring,3.75
+Potato,50,Spring,8.33
+Rhubarb,100,Spring,9.23
+Strawberry,100,Spring,20.83
+Tulip,20,Spring,1.67
+Unmilled Rice,40,Spring,-1.67
+Blueberry,80,Summer,20.8
+Corn,150,Summer,7.41
+Hops,60,Summer,13.52
+Hot Pepper,40,Summer,10.77
+Melon,80,Summer,14.17
+Poppy,100,Summer,5.71
+Radish,40,Summer,8.33
+Red Cabbage,100,Summer,17.78
+Starfruit,400,Summer,26.92
+Summer Spangle,50,Summer,5
+Sunflower,200,Summer,-15
+Tomato,50,Summer,9.26
+Wheat,10,Summer,3.75
+Amaranth,70,Fall,11.43
+Artichoke,30,Fall,16.25
+Beet,20,Fall,13.33
+Bok Choy,50,Fall,7.5
+Cranberries,240,Fall,18.89
+Eggplant,20,Fall,11.2
+Fairy Rose,200,Fall,7.5
+Grape,60,Fall,16.8
+Pumpkin,100,Fall,16.92
+Yam,60,Fall,10

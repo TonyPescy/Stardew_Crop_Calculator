@@ -20,53 +20,31 @@ class Crop:
 # All gpd values are based on being planted and water from day 1 of their month
 # all prices are based on Pierre's shop cuz who uses jojomart except for the achievement?
 def generate_crops():
-    bl_jz = Crop('Blue Jazz', 30, 'Spring', 2.86)
-    cauli = Crop('Cauliflower', 80, 'Spring', 7.92)
-    garlic = Crop('Garlic', 40, 'Spring', 5)
-    grn_bn = Crop('Green Bean', 60, 'Spring', 7.2)
-    kale = Crop('Kale', 70, 'Spring', 6.67)
-    prsnp = Crop('Parsnip', 20, 'Spring', 3.75)
-    pot = Crop('Potato', 50, 'Spring', 8.33)
-    rhub = Crop('Rhubarb', 100, 'Spring', 9.23)
-    stwbry = Crop('Strawberry', 100, 'Spring', 20.83)
-    tul = Crop('Tulip', 20, 'Spring', 1.67)
-    rice = Crop('Unmilled Rice', 40, 'Spring', -1.67)
+    # Initialize crop dictionary
+    crop_dict = {}
+    # Open crop.csv
+    with open('crop.csv') as crop_csv_file:
+        # Skip csv header 
+        next(crop_csv_file)
+        # Read file line by line
+        for line in crop_csv_file:
+            # assign columns from csv
+            name, seed_price, season, profit_per_day = line.strip().split(',')
+            # Ensure valid values from csv file
+            try:
+                seed_price = int(seed_price)
+                profit_per_day = float(profit_per_day)
+            except:
+                print('Error reading crop csv file.')
+                print(f'Error with crop: {name}!')
 
-    blbry = Crop('Blueberry', 80, 'Summer', 20.8)
-    corn_s = Crop('Corn', 150, 'Summer', 7.41)
-    hops = Crop('Hops', 60, 'Summer', 13.52)
-    hot_pep = Crop('Hot Pepper', 40, 'Summer', 10.77)
-    melon = Crop('Melon', 80, 'Summer', 14.17)
-    pop = Crop('Poppy', 100, 'Summer', 5.71)
-    rad = Crop('Radish', 40, 'Summer', 8.33)
-    rd_cab = Crop('Red Cabbage', 100, 'Summer', 17.78)
-    strfrt = Crop('Starfruit', 400, 'Summer', 26.92)
-    sum_spngl = Crop('Summer Spangle', 50, 'Summer', 5)
-    snflwr_s = Crop('Sunflower', 200, 'Summer', -15)
-    tom = Crop('Tomato', 50, 'Summer', 9.26)
-    wht_s = Crop('Wheat', 10, 'Summer', 3.75)
+            # Create crop object
+            temp_crop = Crop(name, seed_price, season, profit_per_day)
+            # Add crop to crop dictionary
+            key = name.lower().replace(' ', '')
+            crop_dict[key] = temp_crop
 
-    ama = Crop('Amaranth', 70, 'Fall', 11.43)
-    arti = Crop('Artichoke', 30, 'Fall', 16.25)
-    beet = Crop('Beet', 20, 'Fall', 13.33)
-    bok = Crop('Bok Choy', 50, 'Fall', 7.5)
-    #corn_f = Crop('Corn', 150, 'Fall', 1.92)
-    cranbry = Crop('Cranberries', 240, 'Fall', 18.89)
-    egplnt = Crop('Eggplant', 20, 'Fall', 11.2)
-    fry_rs = Crop('Fairy Rose', 200, 'Fall', 7.5)
-    grp = Crop('Grape', 60, 'Fall', 16.8)
-    pmpkn = Crop('Pumpkin', 100, 'Fall', 16.92)
-    #snflwr_f = Crop('Sunflower', 200, 'Fall', -30)
-    #wht_f = Crop('Wheat', 10, 'Fall', 1.875)
-    yam = Crop('Yam', 60, 'Fall', 10)
-
-    # Crop dictionary creation
-    crop_dict = {
-        value.name.lower().replace(" ", ""): value
-        for value in locals().values()
-        if isinstance(value, Crop)
-    }
-
+    # Return filled crop dictionary
     return crop_dict
 
 # Uses user-inputted crop name and checks to see if there are any spelling errors or if what was entered is a valid crop
@@ -142,7 +120,7 @@ def get_crop_selection():
 
     while True:
         try:
-            crop_res = (input('Please enter the crop you would like to plant: ').lower()).strip()
+            crop_res = (input('Please enter the crop name you would like to plant: ').lower()).strip()
             if  crop_dictionary.get(crop_res) != None:      # valid crop name entered
                 return crop_dictionary.get(crop_res)
             

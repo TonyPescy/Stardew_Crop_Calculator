@@ -14,13 +14,30 @@ class Sprinkler:
         self.tiles_watered = tiles_watered
         self.tiles_with_nozzle = tiles_with_nozzle
 
-# Creates the three variants of sprinklers with their stats and returns a list of the Sprinkler objects
+# Reads and creates the three variants of sprinklers with their stats and returns a list of the Sprinkler objects
 def generate_sprinklers():
-    basic_spr = Sprinkler('Sprinkler', 4, 8)
-    qual_spr = Sprinkler('Quality Sprinkler', 8, 24)
-    iri_spr = Sprinkler('Iridium Sprinkler', 24, 48)
+    # Initialize empty list for sprinklers
+    sprinkler_list = []
 
-    sprinkler_list = [basic_spr, qual_spr, iri_spr]
+    # Open sprinkler.csv 
+    with open('sprinkler.csv') as sprinkler_csv_file:
+        # Skip csv header
+        next(sprinkler_csv_file)
+        # Read file line by line
+        for line in sprinkler_csv_file:
+            # Assign columns from csv
+            name, watered, with_nozzle = line.strip().split(',')
+            # Ensure valid values from csv file
+            try:
+                watered = int(watered)
+                with_nozzle = int(with_nozzle)
+            except:
+                print('Error reading sprinkler csv file.')
+                print(f'Error with sprinkler: {name}!')
+
+            # Create sprinkler object and append to list
+            sprinkler_list.append(Sprinkler(name, watered, with_nozzle))
+
     return sprinkler_list
 
 # Will ask user to input how mnay sprinklers of each type they have

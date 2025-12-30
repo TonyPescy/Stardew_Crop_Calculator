@@ -17,18 +17,59 @@ class Fertilizer:
 
 # Creates all the variants of fertilizer with their stats and returns a list of the fertilizer objects
 def generate_fertilizer():
-    bas_fert = Fertilizer('Basic Fertilizer', 100, [['Sap', 2]])
-    qual_fert = Fertilizer('Quality Fertilizer', 150, [['Sap', 4], ['Any Fish', 1]], 2)
-    del_fert = Fertilizer('Deluxe Fertilizer', 0, [['Iridium Bar', 1], ['Sap', 40]], 5)
-    bas_ret = Fertilizer('Basic Retaining Soil', 100, [['Stone', 2]])
-    qual_ret = Fertilizer('Quality Retaining Soil', 150, [['Stone', 3], ['Clay', 1]], 2)
-    del_ret = Fertilizer('Deluxe Retaining Soil', 0, [['Stone', 5], ['Fiber', 3], ['Clay', 1]])
-    speed_gro = Fertilizer('Speed-Gro', 100, [['Pine Tar', 1], ['Moss', 5]], 5)
-    del_gro = Fertilizer('Deluxe Speed-Gro', 150, [['Oak Resin', 1], ['Bone Fragment', 5]], 5 )
-    hyp_gro = Fertilizer('Hyper Speed-Gro', 0, [['Radiactive Ore', 1], ['Bone Fragment', 3], ['Solar Essence', 1]])
+    # Initialize fertilizer list
+    fertilizer_list = []
+    # Open fertilizer.csv
+    with open('fertilizer.csv') as fertilizer_file:
+        # Skip csv header
+        next(fertilizer_file)
+        # Read file line by line
+        for line in fertilizer_file:
+            # Assign columns from csv
+            name, price, recipe, amt_per_craft = line.strip().split(",")
+            
+            # Create recipe from csv
+            # Initialize recipe list
+            recipe_list = []
+            for ingredient in recipe.split(';'):
+                ingredient_name, quantity = ingredient.split(':')
+                
+                # Ensure valid values for quantity
+                try:
+                    quantity = int(quantity)
+                except:
+                    print('Error reading recipe from fertilizer csv file.')
+                    print(f'Error with recipe: {name} and ingredient {ingredient_name}!')
+                
+                # Add seperated ingredients to the recipe list
+                recipe_list.append([ingredient_name, quantity])
+            
+            # Create fertilizer object
+            if amt_per_craft != '':     # If amount per craft is specified
+                # Ensure valid values from csv file
+                try:
+                    amt_per_craft = int(amt_per_craft)
+                    price = int(price)
+                except:
+                    print('Error reading fertilizer csv file.')
+                    print(f'Error with price and/or amount per craft from: {name}!')
 
-    fert_list = [bas_fert, qual_fert, del_fert, bas_ret, qual_ret, del_ret, speed_gro, del_gro, hyp_gro]
-    return fert_list
+                temp_fertilizer = Fertilizer(name, price, recipe_list, amt_per_craft)
+
+            else:       # amt_per_craft not specified
+                # Ensure valid values for price
+                try:
+                    price = int(price)
+                except:
+                    print('Error reading fertilizer csv file.')
+                    print(f'Error with price from: {name}!')
+
+                temp_fertilizer = Fertilizer(name, price, recipe_list)
+            
+            # Add fertilizer object to the fertilizer list
+            fertilizer_list.append(temp_fertilizer)
+
+    return fertilizer_list
 
 # Asks user to choose whatever fertilizer they will use on their field
 def get_fertilizer_used():
@@ -49,5 +90,8 @@ def get_fertilizer_used():
             print('Invalid resposnse. Please enter a whole number from the range provided.')
 
     # returns fertilizer object that was selected
-    selected_fert = fert_list[fert_res-1]
+    if fert_res == 0:
+        selected_fert = fert_list[fert_res] 
+    else:   # Prevents 0 from becoming -1 (last option)
+        selected_fert = fert_list[fert_res-1]
     return selected_fert
