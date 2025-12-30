@@ -45,7 +45,7 @@ def get_number_of_sprinklers():
     while True:
         # Repeats request for standard sprinkler number until valid answer
         try:
-            spr = int(input('How many standard sprinklers do you have? (Please answer with a whole number as such: 5): ').strip())
+            spr = int(input('How many standard sprinklers do you have? (Please answer with a whole number): ').strip())
             if spr < 0:
                 int(TO_INT_FAIL)
             break
@@ -55,7 +55,7 @@ def get_number_of_sprinklers():
     while True:
         # Repeats request for quality sprinkler number until valid answer
         try:
-            qual_spr = int(input('How many quality sprinklers do you have? (Please answer with a whole number as such: 5): ').strip())
+            qual_spr = int(input('How many quality sprinklers do you have? (Please answer with a whole number): ').strip())
             if qual_spr < 0:
                 int(TO_INT_FAIL)
             break
@@ -65,7 +65,7 @@ def get_number_of_sprinklers():
     while True:
         # Repeats request for iridium sprinkler number until valid answer
         try:
-            iri_spr = int(input('How many iridium sprinklers do you have? (Please answer with a whole number as such: 5): ').strip())
+            iri_spr = int(input('How many iridium sprinklers do you have? (Please answer with a whole number): ').strip())
             if iri_spr < 0:
                 int(TO_INT_FAIL)
             break
@@ -80,7 +80,7 @@ def get_number_of_nozzles():
     while True:
         # Repeats request for pressure nozzles number until valid answer
         try:
-            p_noz = int(input('How many pressure nozzles do you have? (Please answer with a whole number as such 5 and if you have no nozzles, respond with 0.): ').strip())
+            p_noz = int(input('How many pressure nozzles do you have? (Please answer with a whole number and if you have no nozzles, respond with 0.): ').strip())
             if p_noz < 0:
                 int(TO_INT_FAIL)
             break
@@ -94,7 +94,7 @@ def get_number_of_blocked_tiles():
         # Repeats request for unusable watered tiles number until valid answer
         try:
             print('Common unusable tiles include: Scarecrows, rocks/boulders, trees/stumps, fences, etc.')
-            unusable_tiles = int(input('How many unusable tiles do you have? (Please answer with a whole number as such 5 and if you have no unusable tiles, respond with 0.): ').strip())
+            unusable_tiles = int(input('How many unusable tiles do you have? (Please answer with a whole number and if you have no unusable tiles, please respond with 0.): ').strip())
             if unusable_tiles < 0:
                 int(TO_INT_FAIL)
             break
@@ -108,7 +108,7 @@ def seeds_to_buy():
     known_seeds_res = ''
     valid_res = False
     while known_seeds_res != 'yes' and known_seeds_res != 'no':
-        known_seeds_res = (input('Do you know how many seeds you need for your entire field? Please respond with "Yes" or "No": ').lower()).strip()
+        known_seeds_res = (input('Do you know how many seeds you need for your entire field? Please respond with Yes or No: ').lower()).strip()
 
         if known_seeds_res == 'yes':
             # Asks for user value of seeds until it gets a valid integer from user

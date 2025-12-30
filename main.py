@@ -15,16 +15,16 @@ def main():
     lib.welcome_mess()
 
     # How many crops can be grown
-    total_seeds = seeds_to_buy()
+    #total_seeds = seeds_to_buy()
 
     # Ask for fertilizers used
-    fertilizer = get_fertilizer_used()
+    #fertilizer = get_fertilizer_used()
 
     # Get crop info
-    crop = get_crop_selection()
+    #crop = get_crop_selection()
 
     # display information to user
-    lib.display_info(total_seeds, fertilizer, crop)
+    #lib.display_info(total_seeds, fertilizer, crop)
 
     # Exit message
     lib.thank_you_mess()
