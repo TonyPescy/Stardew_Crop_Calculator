@@ -1,0 +1,11 @@
+name,price,recipe,recipe_source, amt_per_craft
+Basic Fertilizer,100,Sap:2,Farming Level 1,
+Quality Fertilizer,150,Sap:4;Any Fish:1,Farming Level 9,2
+Deluxe Fertilizer,0,Iridium Bar:1;Sap:40,Purchasing from Mr. Qi for 20 Qi Gems,5
+Basic Retaining Soil,100,Stone:2,Farming Level 4,
+Quality Retaining Soil,150,Stone:3;Clay:1,Farming Level 7,2
+Deluxe Retaining Soil,0,Stone:5;Fiber:3;Clay:1,Purchasing from Island Trader for 50 Cinder Shards,
+Speed-Gro,100,Pine Tar:1;Moss:5,Farming Level 3,5
+Deluxe Speed-Gro,150,Oak Resin:1;Bone Fragment:5,Farming Level 8,5
+Hyper Speed-Gro,0,Radiactive Ore:1;Bone Fragment:3;Solar Essence:1,Purchasing from Mr. Qi for 20 Qi Gems,
+Tree Fertilizer,0,Fiber:5;Stone:5,Foraging Level 7,

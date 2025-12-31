@@ -16,14 +16,15 @@ class Crop:
         self.season = season
         self.gpd = gpd
 
-# Creates all the variants of crops with their stats and returns a list of the ordered crop objects
+# Creates all the variants of crops with their stats
 # All gpd values are based on being planted and water from day 1 of their month
 # all prices are based on Pierre's shop cuz who uses jojomart except for the achievement?
+# Returns ordered list of crop objects
 def generate_crops():
     # Initialize crop dictionary
     crop_dict = {}
     # Open crop.csv
-    with open('crop.csv') as crop_csv_file:
+    with open('Crop_And_Field_CSVs/crop.csv') as crop_csv_file:
         # Skip csv header 
         next(crop_csv_file)
         # Read file line by line
@@ -48,6 +49,8 @@ def generate_crops():
     return crop_dict
 
 # Uses user-inputted crop name and checks to see if there are any spelling errors or if what was entered is a valid crop
+# crop_name =  string inputted by user to be checked if it is in or similar to crops in our dictionary
+# crop_dictionary = key:value dictionary of crop objects used to find users chosen crop
 def crop_auto_correct(crop_name, crop_dictionary):
     # normalize to match your dict keys (lowercase, no spaces)
     key = ''.join(ch for ch in crop_name.lower() if ch.isalnum())
@@ -154,6 +157,7 @@ def get_crop_selection():
 
 
 # Displays crop suggestions based on season provided
+# season = user entered season (string)
 def crop_suggestions(season):
     match season:
         case 'spring':

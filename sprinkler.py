@@ -14,13 +14,14 @@ class Sprinkler:
         self.tiles_watered = tiles_watered
         self.tiles_with_nozzle = tiles_with_nozzle
 
-# Reads and creates the three variants of sprinklers with their stats and returns a list of the Sprinkler objects
+# Reads and creates the three variants of sprinklers with their stats
+# Returns list of Sprinkler objects
 def generate_sprinklers():
     # Initialize empty list for sprinklers
     sprinkler_list = []
 
     # Open sprinkler.csv 
-    with open('sprinkler_stats.csv') as sprinkler_csv_file:
+    with open('Crop_And_Field_CSVs/sprinkler_stats.csv') as sprinkler_csv_file:
         # Skip csv header
         next(sprinkler_csv_file)
         # Read file line by line
@@ -167,7 +168,7 @@ def seeds_to_buy():
                     print('You have ' + str(press_noz) + ' pressure nozzle(s) left. You should craft more sprinklers if you are able to!')
         else:
             # Invalid respone for known_seeds_res
-            print('Invalid response, please enter "Yes" or "no".')
+            print('Invalid response, please enter yes or no.')
             
     
     return seeds_needed

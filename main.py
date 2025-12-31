@@ -14,17 +14,19 @@ def main():
     # Welcome
     lib.welcome_mess()
 
+# CROP CALC PATH START
     # How many crops can be grown
-    #total_seeds = seeds_to_buy()
+    total_seeds = seeds_to_buy()
 
     # Ask for fertilizers used
-    #fertilizer = get_fertilizer_used()
+    fertilizer = get_fertilizer_used()
 
     # Get crop info
-    #crop = get_crop_selection()
+    crop = get_crop_selection()
 
     # Display information to user
-    #lib.display_info(total_seeds, fertilizer, crop)
+    lib.display_info(total_seeds, fertilizer, crop)
+# CROP CALC PATH END
 
     # Exit message
     lib.thank_you_mess()
