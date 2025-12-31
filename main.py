@@ -11,7 +11,7 @@ from crop import get_crop_selection
 from sprinkler import seeds_to_buy
 
 def main():
-    # welcome
+    # Welcome
     lib.welcome_mess()
 
     # How many crops can be grown
@@ -23,7 +23,7 @@ def main():
     # Get crop info
     #crop = get_crop_selection()
 
-    # display information to user
+    # Display information to user
     #lib.display_info(total_seeds, fertilizer, crop)
 
     # Exit message

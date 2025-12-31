@@ -20,7 +20,7 @@ def generate_sprinklers():
     sprinkler_list = []
 
     # Open sprinkler.csv 
-    with open('sprinkler.csv') as sprinkler_csv_file:
+    with open('sprinkler_stats.csv') as sprinkler_csv_file:
         # Skip csv header
         next(sprinkler_csv_file)
         # Read file line by line
