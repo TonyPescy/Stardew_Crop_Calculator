@@ -4,6 +4,9 @@
 # Description: craftable class to house important information about the craftable items
 #######################################################################################################################################
 
+# Constant
+CRAFTABLE_TYPES = ['Artisan Equipment', 'Bombs', 'Decor', 'Fences', 'Seeds', 'Sprinklers']   # contains 
+
 # Import
 from library import TO_INT_FAIL
 
@@ -25,13 +28,13 @@ def read_recipe_csv(craftable_type):
     # Initialize list of craftable items
     craftable_item_list = []
     # Open chosen craftable_type csv
-    with open(f'Recipe_CSVs/{craftable_type}.csv') as recipe_csv_file:
+    with open(f'Craftable_CSVs/{craftable_type.replace(" ", "_").lower()}.csv') as recipe_csv_file:
         # Skip csv header
         next(recipe_csv_file)
         # Read file line by line
         for line in recipe_csv_file:
             # Assign columns from csv
-            name, recipe, recipe_source, amt_per_craft = line.strip().split(",")
+            name, recipe, recipe_source, amt_per_craft = line.strip().split(',')
     
             # Create recipe from csv
             # Initialize recipe list
@@ -68,3 +71,23 @@ def read_recipe_csv(craftable_type):
 
     # Returns completed list of objects for selected craftable type
     return craftable_item_list
+
+# Asks user to choose what type of crafting they want to be calculated
+# Returns string that represents the users type of crafting to be done
+def get_crafting_type():
+
+    while True:
+        print('From the following options please pick which craftables you would like to see:')
+        for i in range(1, len(CRAFTABLE_TYPES)+1):     
+            print('{}. {}'.format(i, CRAFTABLE_TYPES[i-1]))
+            
+        # Repeats request for craftable type response until it gets a valid response
+        try:
+            craftable_type_res = int(input('Please enter the number corresponding to craftable type you wish to see: ').strip())
+            if craftable_type_res <= 0 or craftable_type_res >= (len(CRAFTABLE_TYPES)+1):
+                int(TO_INT_FAIL)
+            break
+        except:
+            print('Invalid resposnse. Please enter a whole number from the range provided.')
+
+    return CRAFTABLE_TYPES[craftable_type_res]

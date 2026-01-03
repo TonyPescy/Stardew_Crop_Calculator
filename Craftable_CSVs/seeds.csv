@@ -1,0 +1,11 @@
+name,recipe,recipe_source,amt_per_craft
+Wild Seeds (Spring),Wild Horseradish:1;Daffodil:1;Leek:1;Dandelion:1,Foraging Level 1,10
+Wild Seeds (Summer),Spice Berry:1;Grape:1;Sweet Pea:1,Foraging Level 4,10
+Wild Seeds (Fall),Common Mushroom:1;Wild Plum:1;Hazelnut:1;Blackberry:1,Foraging Level 6,10
+Wild Seeds (Winter),Winter Root:1;Crystal Fruit:1;Snow Yam:1;Crocus:1,Foraging Level 7,10
+Ancient Seeds,Ancient Seed:1,Donating Ancient Seed to museum,
+Grass Starter,Fiber:10,Purchasing from Pierre for 1000 gold,
+Blue Grass Starter,Fiber:25;Moss:10;Mystic Syrup:1,Purchasing from Mr. Qi for 40 Qi Gems,
+Tea Sapling,Wild Seeds (Any):2;Fiber:5;Wood:5,Receiving mail after Caroline's 2-heart event,
+Fiber Seeds (4),Mixed Seeds:1;Sap:5;Clay:1,Completing Linus' Special Order,4
+Mystic Tree Seed,Acorn:5;Maple Seed:5;Pine Cone:5;Mahogany Seed:5,Foraging Mastery,
