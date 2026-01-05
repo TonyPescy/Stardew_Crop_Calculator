@@ -51,6 +51,7 @@ def calc_cost(seeds_needed, fertilizer, crop):
             temp_material_needed = min_crafts * item[1]
             print(f'You need {temp_material_needed} {item[0]}(s) for fertilizer.')
         total_cost = ((crop.seed_price) * int(seeds_needed))
+        
     else:
         total_cost = ((crop.seed_price) + (fertilizer.price)) * int(seeds_needed)
 

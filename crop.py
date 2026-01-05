@@ -51,6 +51,7 @@ def generate_crops():
 # Uses user-inputted crop name and checks to see if there are any spelling errors or if what was entered is a valid crop
 # crop_name =  string inputted by user to be checked if it is in or similar to crops in our dictionary
 # crop_dictionary = key:value dictionary of crop objects used to find users chosen crop
+# Returns list of potential spelling matches
 def crop_auto_correct(crop_name, crop_dictionary):
     # normalize to match your dict keys (lowercase, no spaces)
     key = ''.join(ch for ch in crop_name.lower() if ch.isalnum())

@@ -84,7 +84,7 @@ def get_fertilizer_used():
             
         # Repeats request for fertilizer response until it gets a valid response
         try:
-            fert_res = int(input('Please enter the number corresponding to fertilizer you wish to use in your field: ').strip())
+            fert_res = int(input('Please enter the number corresponding to the fertilizer you wish to use in your field: ').strip())
             if fert_res < 0 or fert_res > (len(fert_list)+1):
                 int(TO_INT_FAIL)
             break

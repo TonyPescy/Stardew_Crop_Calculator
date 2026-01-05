@@ -1,14 +1,15 @@
-#######################################################################################################################################
+###########################################################################################################################################
 # Title: main
 # Author: Tony Pescatore
-# Description: Main will utilize functions from library.py and inputs from the user to generate the cost of planting all your crops.
-#######################################################################################################################################
+# Description: Main will utilize functions from other .py files and inputs from the user to generate the cost of planting all your crops.
+###########################################################################################################################################
 
 # Imports
 import library as lib
 from fertilizer import get_fertilizer_used
 from crop import get_crop_selection
 from sprinkler import seeds_to_buy
+#from craftable import 
 
 from craftable import read_recipe_csv
 
@@ -36,11 +37,13 @@ def main():
             lib.display_info(total_seeds, fertilizer, crop)
         
         case 'Crafting Calculator':
-            print('C4RAFTING CALC FOUND!')
+            print('CRAFTING CALC FOUND!')
+            # Get users crafting item type
+            
 
 # TESTER
-    test1 = read_recipe_csv('Artisan Equipment')
-    print(test1)
+#    test1 = read_recipe_csv('Artisan Equipment')
+#    print(test1)
 
     # Exit message
     lib.thank_you_mess()
