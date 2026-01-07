@@ -23,6 +23,7 @@ def main():
         # Match task to task path
         match task:
             case 'Crop Field Calculator':
+                print('\nCrop Field Calculator:')
                 # How many crops can be grown
                 total_seeds = seeds_to_buy()
 

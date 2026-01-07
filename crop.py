@@ -42,7 +42,7 @@ def generate_crops():
             # Create crop object
             temp_crop = Crop(name, seed_price, season, profit_per_day)
             # Add crop to crop dictionary
-            key = name.lower().replace(' ', '')
+            key = name.lower().strip()
             crop_dict[key] = temp_crop
 
     # Return filled crop dictionary
@@ -53,46 +53,57 @@ def generate_crops():
 # crop_dictionary = key:value dictionary of crop objects used to find users chosen crop
 # Returns list of potential spelling matches
 def crop_auto_correct(crop_name, crop_dictionary):
-    # normalize to match your dict keys (lowercase, no spaces)
-    key = ''.join(ch for ch in crop_name.lower() if ch.isalnum())
+    # Normalize to match dictionary keys (lowercase, no spaces)
+    key = ''.join(character for character in crop_name.lower())
     n = len(key)
-    letters = string.ascii_lowercase
+    letters = string.ascii_lowercase + ' '
 
     results = []
     seen = set()
 
+    # Special case - Cranberries (Differs from standard blueberry for some reason? - Special case catches this and corrects)
+    if key == 'cranberry':
+        results.append(crop_dictionary['cranberries'])
+        seen.add('cranberries')
+
     # 0-edit (exact match)
-    if key in crop_dictionary:
-        results.append(crop_dictionary[key])
-        seen.add(key)
+    if key.strip() in crop_dictionary:
+        results.append(crop_dictionary[key.strip()])
+        seen.add(key.strip())
 
     # 1 substitution
     for i in range(n):
         orig_i = key[i]
-        for c1 in letters:
-            if c1 == orig_i:
+
+        for character_1 in letters:
+            if character_1 == orig_i:    # Ignore original character
                 continue
-            cand1 = key[:i] + c1 + key[i+1:]
-            if cand1 in crop_dictionary and cand1 not in seen:
-                results.append(crop_dictionary[cand1])
-                seen.add(cand1)
+            candidate_1 = key[:i] + character_1 + key[i+1:]
+
+            if candidate_1.strip() in crop_dictionary and candidate_1.strip() not in seen:
+                results.append(crop_dictionary[candidate_1.strip()])
+                seen.add(candidate_1.strip())
 
     # 2 substitutions at any two positions
     for i in range(n):
         orig_i = key[i]
-        for c1 in letters:
-            if c1 == orig_i:
+
+        for character_1 in letters:
+            if character_1 == orig_i:    # Ignore original character
                 continue
-            s1 = key[:i] + c1 + key[i+1:]
+            string_1 = key[:i] + character_1 + key[i+1:]
+
             for j in range(i+1, n):
-                orig_j = s1[j]
-                for c2 in letters:
-                    if c2 == orig_j:
+                orig_j = string_1[j]
+
+                for character_2 in letters:
+                    if character_2 == orig_j:    # Ignore original character
                         continue
-                    cand2 = s1[:j] + c2 + s1[j+1:]
-                    if cand2 in crop_dictionary and cand2 not in seen:
-                        results.append(crop_dictionary[cand2])
-                        seen.add(cand2)
+                    candidate_2 = string_1[:j] + character_2 + string_1[j+1:]
+
+                    if candidate_2.strip() in crop_dictionary and candidate_2.strip() not in seen:
+                        results.append(crop_dictionary[candidate_2.strip()])
+                        seen.add(candidate_2.strip())
 
     return results
 
@@ -176,4 +187,4 @@ def crop_suggestions(season):
             print('1. Cranberries - Best overall fall crop.')
             print('2. Pumpkin - Second best fall crop.')
             print('3. Grape - Third best fall crop')
-            print('4. Cranberries - Best crop for artisan goods.')
+            print('4. Cranberries - Best fall crop for artisan goods.')

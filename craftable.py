@@ -73,6 +73,63 @@ def read_recipe_csv(craftable_type):
     # Returns completed list of objects for selected craftable type
     return craftable_item_list
 
+# Specialized Fertilizer CSV Reader
+# Creates all the variants of fertilizer as craftable objects
+# Returns list of Craftable objects
+def generate_craftable_fertilizer():
+    # Initialize craftable fertilizer list
+    craftable_fertilizer_list = []
+    # Open fertilizer.csv
+    with open('Crop_And_Field_CSVs/fertilizer.csv') as fertilizer_file:
+        # Skip csv header
+        next(fertilizer_file)
+        # Read file line by line
+        for line in fertilizer_file:
+            # Assign columns from csv - price is not used for craftable objects
+            name, price, recipe, recipe_source, amt_per_craft = line.strip().split(",")
+            
+            # Create recipe from csv
+            # Initialize recipe list
+            recipe_list = []
+            for ingredient in recipe.split(';'):
+                ingredient_name, quantity = ingredient.split(':')
+                
+                # Ensure valid values for quantity
+                try:
+                    quantity = int(quantity)
+                except:
+                    print('Error reading recipe from fertilizer csv file.')
+                    print(f'Error with recipe: {name} and ingredient {ingredient_name}!')
+                
+                # Add seperated ingredients to the recipe list
+                recipe_list.append([ingredient_name, quantity])
+            
+            # Create fertilizer object
+            if amt_per_craft != '':     # If amount per craft is specified
+                # Ensure valid values from csv file
+                try:
+                    amt_per_craft = int(amt_per_craft)
+                except:
+                    print('Error reading fertilizer csv file.')
+                    print(f'Error with price and/or amount per craft from: {name}!')
+
+                temp_craftable = Craftable(name, recipe_list, recipe_source, amt_per_craft)
+
+            else:       # amt_per_craft not specified
+                # Ensure valid values for price
+                try:
+                    price = int(price)
+                except:
+                    print('Error reading fertilizer csv file.')
+                    print(f'Error with price from: {name}!')
+
+                temp_craftable = Craftable(name, recipe_list, recipe_source)
+            
+            # Add craftable object to the fertilizer list
+            craftable_fertilizer_list.append(temp_craftable)
+
+    return craftable_fertilizer_list
+
 # Asks user to choose what type of crafting they want to be calculated
 # Returns string that represents the users type of crafting to be done
 def get_crafting_type():
@@ -81,15 +138,19 @@ def get_crafting_type():
         print('From the following options please pick which craftables you would like to see:')
         for i in range(1, len(CRAFTABLE_TYPES)+1):     
             print('{}. {}'.format(i, CRAFTABLE_TYPES[i-1]))
+        # Allow fertilizer option for crafting
+        print('{}. Fertilizer'.format(len(CRAFTABLE_TYPES)+1))
             
         # Repeats request for craftable type response until it gets a valid response
         try:
             craftable_type_res = int(input('Please enter the number corresponding to craftable type you wish to see: ').strip())
-            if craftable_type_res <= 0 or craftable_type_res >= (len(CRAFTABLE_TYPES)+1):
+            if craftable_type_res <= 0 or craftable_type_res >= (len(CRAFTABLE_TYPES)+2):
                 int(TO_INT_FAIL)
+            elif craftable_type_res == (len(CRAFTABLE_TYPES)+1):
+                return 'Fertilizer'
             break
         except:
-            print('Invalid resposnse. Please enter a whole number from the range provided.')
+            print('Invalid resposnse. Please enter a whole number from the range provided.\n')
 
     return CRAFTABLE_TYPES[craftable_type_res-1]
 
@@ -101,7 +162,11 @@ def get_craftable_item():
         # Get craftable type
         craftable_type = get_crafting_type()
         # Get list of items from craftable type
-        craftable_type_item_list = read_recipe_csv(craftable_type)
+        # Special Case - Fertilizer selected by user
+        if craftable_type == 'Fertilizer':
+            craftable_type_item_list = generate_craftable_fertilizer()
+        else:
+            craftable_type_item_list = read_recipe_csv(craftable_type)
         # List all options to user until proper response is given
         while True:
             for i in range(1, len(craftable_type_item_list)+1):      
@@ -110,11 +175,11 @@ def get_craftable_item():
             # Repeats request for item choice until it gets a valid response
             try:
                 item_res = int(input('Please enter the number corresponding to item you wish to craft (If your desired item is not present enter 0 and try another craftable type): ').strip())
-                if item_res < 0 or item_res > (len(craftable_type_item_list)+1):
+                if item_res < 0 or item_res > (len(craftable_type_item_list)):
                     int(TO_INT_FAIL)
                 break
             except:
-                print('Invalid resposnse. Please enter a whole number from the range provided.')
+                print('Invalid resposnse. Please enter a whole number from the range provided.\n')
         
         # Ensures user finds their craftable item
         if item_res != 0 and item_res <= (len(craftable_type_item_list)+1):
@@ -158,7 +223,11 @@ def crafting_calculator():
             break
         # Else - Repeat while true loop
     # Display user recipes
-    print('\nHere is what you would need to craft your selected item(s):')
+    if len(items_to_craft) == 1:
+        print('\nHere is what you would need to craft your selected item:')
+    else:
+        print('\nHere is what you would need to craft your selected items:')
+        
     for i in range(1, len(items_to_craft)+1):
         # Print list number, name of item, and item quantity
         print('{}. {} x{}'.format(i, items_to_craft[i-1][0].name, items_to_craft[i-1][1])) # i-Number, items_to_craft[i-1][0]-Object, items_to_craft[i-1][1]-Quantity

@@ -171,4 +171,4 @@ def seeds_to_buy():
             print('Invalid response, please enter yes or no.')
             
     
-    return seeds_needed
+    return int(seeds_needed)

@@ -25,8 +25,16 @@ def welcome_mess():
 # fertilizer = Fertilizer object which was selected by user
 # crop = Crop object which was selected by user
 def display_info(seeds_needed, fertilizer, crop):
-    cost = calc_cost(seeds_needed, fertilizer, crop)
-    print(f'You need ${cost} gold to fully plant your field for this season!')
+    # If an invalid field size was calculated
+    if seeds_needed <= 0:
+        print('Your field size was invalid based on the calculations, please try again!')
+    else:
+        cost = calc_cost(seeds_needed, fertilizer, crop)
+        print('\nYou need {} gold to fully plant your field with {} {} seeds for {}!'.format(cost, seeds_needed, crop.name, crop.season))
+        if fertilizer.price != 0:
+            print('You need {} gold to fully fertilize your field with {}.'.format(fertilizer.price*seeds_needed, fertilizer.name))
+            print('Total gold needed: {} + {} = {}'.format(cost, fertilizer.price*seeds_needed, (fertilizer.price*seeds_needed)+cost))
+
 
 # Thanks user for using calculator
 def thank_you_mess():
@@ -47,13 +55,14 @@ def thank_you_mess():
 def calc_cost(seeds_needed, fertilizer, crop):
     if fertilizer.price == 0:   # craftable fertilizer
         min_crafts = int(int(seeds_needed)/fertilizer.amt_per_craft) + bool(int(seeds_needed)/fertilizer.amt_per_craft%1)
+        print('\n{} Recipe:'.format(fertilizer.name)) # Formatting cleanup
         for item in fertilizer.recipe:
             temp_material_needed = min_crafts * item[1]
-            print(f'You need {temp_material_needed} {item[0]}(s) for fertilizer.')
+            print(f'\t{temp_material_needed} {item[0]}(s)')
         total_cost = ((crop.seed_price) * int(seeds_needed))
         
     else:
-        total_cost = ((crop.seed_price) + (fertilizer.price)) * int(seeds_needed)
+        total_cost = (crop.seed_price) * int(seeds_needed)
 
     return total_cost
 

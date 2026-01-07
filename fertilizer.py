@@ -27,7 +27,7 @@ def generate_fertilizer():
         next(fertilizer_file)
         # Read file line by line
         for line in fertilizer_file:
-            # Assign columns from csv - recipe_source is not used for
+            # Assign columns from csv - recipe_source is not used in crop field calculations
             name, price, recipe, recipe_source, amt_per_craft = line.strip().split(",")
             
             # Create recipe from csv
