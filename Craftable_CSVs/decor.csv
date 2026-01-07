@@ -1,14 +1,14 @@
 name,recipe,recipe_source,amt_per_craft
-Wood Floor,Wood:1,Purchasing from Robin for 100 gold,
-Rustic Plank Floor,Wood:1,Purchasing from Robin for 200 gold,
-Straw Floor,Wood:1;Fiber:1,Purchasing from Robin for 200 gold,
-Weathered Floor,Wood:1,Purchasing from Dwarf for 500 gold,
-Crystal Floor,Refined Quartz:1,Purchasing from Krobus for 200 gold,5
-Stone Floor,Stone:1,Purchasing from Robin for 100 gold,
-Stone Walkway Floor,Stone:1,Purchasing from Robin for 200 gold,
-Brick Floor,Clay:2;Stone:5,Purchasing from Robin for 500 gold,5
+Wood Floor,Wood:1,Purchasing it from Robin for 100 gold,
+Rustic Plank Floor,Wood:1,Purchasing it from Robin for 200 gold,
+Straw Floor,Wood:1;Fiber:1,Purchasing it from Robin for 200 gold,
+Weathered Floor,Wood:1,Purchasing it from Dwarf for 500 gold,
+Crystal Floor,Refined Quartz:1,Purchasing it from Krobus for 200 gold,5
+Stone Floor,Stone:1,Purchasing it from Robin for 100 gold,
+Stone Walkway Floor,Stone:1,Purchasing it from Robin for 200 gold,
+Brick Floor,Clay:2;Stone:5,Purchasing it from Robin for 500 gold,5
 Wood Path,Wood:1,Starter,
 Gravel Path,Stone:1,Starter,
 Cobblestone Path,Stone:1,Starter,
-Stepping Stone Path,Stone:1,Purchasing from Robin for 100 gold,
-Crystal Path,Refined Quartz:1,Purchasing from Robin for 200 gold,5
+Stepping Stone Path,Stone:1,Purchasing it from Robin for 100 gold,
+Crystal Path,Refined Quartz:1,Purchasing it from Robin for 200 gold,5

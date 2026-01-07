@@ -1,0 +1,18 @@
+name,recipe,recipe_source,amt_per_craft
+Garden Pot,Clay:1;Stone:10;Refined Quartz:1,Completing the Greenhouse,
+Scarecrow,Wood:50;Coal:1;Fiber:20,Reaching farming level 1,
+Deluxe Scarecrow,Wood:50;Fiber:40;Iridium Ore:1,Receiving it in the mail after collecting all Rarecrows,
+Staircase,Stone:99,Reaching mining level 2,
+Explosive Ammo,Iron Bar:1;Coal:2,Reaching combat level 8,5
+Iron Bar,Copper Bar:3,Reaching mining level 4,
+Gold Bar,Iron Bar:2,Reaching mining level 7,
+Mini-Jukebox,Iron Bar:2;Battery Pack:1,Triggering Gus' 5-heart event,
+Mini-Obelisk,Hardwood:30;Solar Essence:20;Gold Bar:3,Completing the Wizard's special order,
+Farm Computer,Dwarf Gadget:1;Battery Pack:1;Refined Quartz:10,Completing Demetrius' special order,
+Hopper,Hardwood:10;Iridium Bar:1;Radioactive Bar:1,Purchasing it from Mr. Qi for 50 Qi Gems,
+Cookout Kit,Wood:15;Fiber:10;Coal:3,Reaching foraging level 3,
+Tent Kit,Hardwood:10;Fiber:25;Cloth:1,Reaching foraging level 8,
+Statue Of The Dwarf King,Iridium Bar:20,Reaching mining mastery,
+Statue Of Blessings,Sap:999;Fiber:999;Stone:999;Moss:333,Reaching farming mastery,
+Anvil,Iron Bar:50,Reaching combat Mastery,
+Mini-Forge,Dragon Tooth:5;Iron Bar:10;Gold Bar:10;Iridium Bar:5,Reaching combat Mastery,

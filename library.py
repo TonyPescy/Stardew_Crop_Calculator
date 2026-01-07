@@ -30,7 +30,7 @@ def display_info(seeds_needed, fertilizer, crop):
 
 # Thanks user for using calculator
 def thank_you_mess():
-    print('Thank you for using my Stardew Valley Crop Calculator!')
+    print('\nThank you for using my Stardew Valley Crop Calculator!')
     input("Press Enter to exit...")
     # Open goodbye mmessage file
     with open('Headers/exit_message.txt') as footer_file:
@@ -76,5 +76,5 @@ def get_task():
         except:
             print('Invalid resposnse. Please enter a whole number from the range provided.')
             
-    print(task_list[task_res-1])
+    #print(task_list[task_res-1])
     return task_list[task_res-1]

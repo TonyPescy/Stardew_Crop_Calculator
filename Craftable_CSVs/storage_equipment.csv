@@ -1,0 +1,5 @@
+name,recipe,recipe_source,amt_per_craft
+Chest,Wood:50,Starter,
+Stone Chest,Stone:50,Completing Robin's special order,
+Big Chest,Wood:120;Copper Bar:2,Purchasing it from Robin for 5000 gold,
+Big Stone Chest,Stone:250,Purchasing it from Dwarf for 5000 gold,

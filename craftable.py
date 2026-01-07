@@ -5,10 +5,11 @@
 #######################################################################################################################################
 
 # Constant
-CRAFTABLE_TYPES = ['Artisan Equipment', 'Bombs', 'Decor', 'Fences', 'Fishing Items', 'Rings', 'Seeds', 'Sprinklers']   # contains 
+CRAFTABLE_TYPES = ['Artisan Equipment', 'Bombs', 'Consumables', 'Decor', 'Fences', 'Fishing Items', 'Furniture', 'Lighting', 'Misc', 'Refining Equipment', 'Rings', 'Seeds', 'Signs', 'Sprinklers', 'Storage Equipment']
 
 # Import
 from library import TO_INT_FAIL
+from math import ceil
 
 class Craftable:
     # Initialize basic craftable item info
@@ -90,7 +91,7 @@ def get_crafting_type():
         except:
             print('Invalid resposnse. Please enter a whole number from the range provided.')
 
-    return CRAFTABLE_TYPES[craftable_type_res]
+    return CRAFTABLE_TYPES[craftable_type_res-1]
 
 # Asks user what item they would like to craft from their selected type
 # Returns item to be crafted object
@@ -103,7 +104,7 @@ def get_craftable_item():
         craftable_type_item_list = read_recipe_csv(craftable_type)
         # List all options to user until proper response is given
         while True:
-            for i in range(1, len(craftable_type_item_list)):      # Exclude tree fertilizer (i=10) as that would not be used on a seeded field
+            for i in range(1, len(craftable_type_item_list)+1):      
                 print('{}. {}'.format(i, craftable_type_item_list[i-1].name))
                 
             # Repeats request for item choice until it gets a valid response
@@ -116,11 +117,11 @@ def get_craftable_item():
                 print('Invalid resposnse. Please enter a whole number from the range provided.')
         
         # Ensures user finds their craftable item
-        if item_res != 0:
+        if item_res != 0 and item_res <= (len(craftable_type_item_list)+1):
             # Get quantity for item selected
             while True:
                 try:
-                    item_quantity = int(input(f'Please enter the number of {craftable_type_item_list[item_res]}s you would like to craft: ').strip())
+                    item_quantity = int(input(f'Please enter the number of {craftable_type_item_list[item_res-1].name}s you would like to craft: ').strip())
                     # Checks for valid response
                     if item_quantity <= 0:
                         int(TO_INT_FAIL)
@@ -130,7 +131,7 @@ def get_craftable_item():
             # Exit first while true loop      
             break
     # Create tuple for returning
-    item_quantity_tuple = (craftable_type_item_list[item_res], item_quantity)
+    item_quantity_tuple = (craftable_type_item_list[item_res-1], item_quantity)
     # Return item object from response
     return item_quantity_tuple
 
@@ -157,7 +158,21 @@ def crafting_calculator():
             break
         # Else - Repeat while true loop
     # Display user recipes
-    print('Here is what you would need to craft you selected item(s):')
+    print('\nHere is what you would need to craft your selected item(s):')
     for i in range(1, len(items_to_craft)+1):
-        print('{}. {} ')
+        # Print list number, name of item, and item quantity
+        print('{}. {} x{}'.format(i, items_to_craft[i-1][0].name, items_to_craft[i-1][1])) # i-Number, items_to_craft[i-1][0]-Object, items_to_craft[i-1][1]-Quantity
+        temp_recipe_source = items_to_craft[i-1][0].recipe_source   # String containing recipe source
+
+        print('\tRequired Items:')
+        # Print recipe item by item
+        for recipe_item in items_to_craft[i-1][0].recipe:
+            print('\t\t{} x{}'.format(recipe_item[0], str(ceil((recipe_item[1] * items_to_craft[i-1][1])/ items_to_craft[i-1][0].amt_per_craft))))  # recipe_item[0]-Item name, recipe_item[1]-Number of items required, items_to_craft[i-1][1]-Quantity of crafts to be done, items_to_craft[i-1][0].amt_per_craft-Amount recipe makes per craft
         
+        # Print source of recipe
+        if temp_recipe_source == 'Starter':
+            print('\tYou start the game with this recipe!')
+        else:
+            temp_recipe_source = temp_recipe_source[0].lower() + temp_recipe_source[1:] # Sentence format fix
+            print('\tYou receive this recipe by {}!'.format(temp_recipe_source))
+    #print('That is what you would need to craft your selected item(s).')

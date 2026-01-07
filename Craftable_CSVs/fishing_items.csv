@@ -1,16 +1,16 @@
 name,recipe,recipe_source,amt_per_craft
-Spinner,Iron Bar:2,Reaching fishing Level 6,
-Trap Bobber,Copper Bar:1;Sap:10,Reaching fishing Level 6,
-Sonar Bobber,Iron Bar:1;Refined Quartz:2,Reaching fishing Level 6,
-Cork Bobber,Wood:10;Hardwood:5;Slime:10,Reaching fishing Level 7,
+Spinner,Iron Bar:2,Reaching fishing level 6,
+Trap Bobber,Copper Bar:1;Sap:10,Reaching fishing level 6,
+Sonar Bobber,Iron Bar:1;Refined Quartz:2,Reaching fishing level 6,
+Cork Bobber,Wood:10;Hardwood:5;Slime:10,Reaching fishing level 7,
 Quality Bobber,Copper Bar:1;Sap:20;Solar Essence:5,Completing Willy's special order,
-Treasure Hunter,Gold Bar:2,Reaching fishing Level 7,
-Dressed Spinner,Iron Bar:2;Cloth:1,Reaching fishing Level 8,
-Barbed Hook,Copper Bar:1;Iron Bar:1;Gold Bar:1,Reaching fishing Level 8,
-Magnet,Iron Bar:1,Reaching fishing Level 9,
-Bait,Bug Meat:1,Reaching fishing Level 2,5
-Deluxe Bait,Bait:5;Moss:2,Reaching fishing Level 4,5
+Treasure Hunter,Gold Bar:2,Reaching fishing level 7,
+Dressed Spinner,Iron Bar:2;Cloth:1,Reaching fishing level 8,
+Barbed Hook,Copper Bar:1;Iron Bar:1;Gold Bar:1,Reaching fishing level 8,
+Magnet,Iron Bar:1,Reaching fishing level 9,
+Bait,Bug Meat:1,Reaching fishing level 2,5
+Deluxe Bait,Bait:5;Moss:2,Reaching fishing level 4,5
 Wild Bait,Fiber:10;Bug Meat:5;Slime:5,Triggering the Linus 4-heart event,5
-Magic Bait,Radioactive Ore:1;Bug Meat:3,Purchasing from Mr Qi for 20 Qi Gems,5
-Challenge Bait,Bone Fragment:5;Moss:2,Reaching fishing Mastery,5
-Crab Pot,Wood:40;Iron Bar:3,Reaching fishing Level 3,
+Magic Bait,Radioactive Ore:1;Bug Meat:3,Purchasing it from Mr Qi for 20 Qi Gems,5
+Challenge Bait,Bone Fragment:5;Moss:2,Reaching fishing mastery,5
+Crab Pot,Wood:40;Iron Bar:3,Reaching fishing level 3,

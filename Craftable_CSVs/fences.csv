@@ -1,6 +1,6 @@
 name,recipe,recipe_source,amt_per_craft
 Gate,Wood:10,Starter,
 Wood Fence,Wood:2,Starter,
-Stone Fence,Stone:2,Reaching farming Level 2,
-Iron Fence,Iron Bar:1,Reaching farming Level 4,10
-Hardwood Fence,Hardwood:1,Reaching farming Level 6,
+Stone Fence,Stone:2,Reaching farming level 2,
+Iron Fence,Iron Bar:1,Reaching farming level 4,10
+Hardwood Fence,Hardwood:1,Reaching farming level 6,
