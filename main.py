@@ -10,6 +10,7 @@ from fertilizer import get_fertilizer_used
 from crop import get_crop_selection
 from sprinkler import seeds_to_buy
 from craftable import crafting_calculator
+from cooking import cooking_calculator
 
 def main():
     # Welcome
@@ -39,6 +40,10 @@ def main():
             case 'Crafting Calculator':
                 print('\nCrafting Calculator:')
                 crafting_calculator()
+            
+            case 'Cooking Calculator':
+                print('\nCooking Calculator:')
+                cooking_calculator()
         
         # See if user wishes to run the calculator again
         while True:

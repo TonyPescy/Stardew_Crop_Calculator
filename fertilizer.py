@@ -4,7 +4,7 @@
 # Description: fertilizer class to house important information about the fertilizers.
 #######################################################################################################################################
 
-# Import
+# Imports
 from library import TO_INT_FAIL
 from craftable import Craftable     # Parent class imported for Fertilizer child class
 

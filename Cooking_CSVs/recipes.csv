@@ -1,0 +1,82 @@
+name,recipe,recipe_source,amt_per_craft,sell_price,health,energy,buff,buff_duration
+Fried Egg,Egg:1,Starter,1,35,22,50,,
+Omelet,Egg:1;Milk:1,Watching The Queen of Sauce on day 28 of Spring in Year 1 or purchasing it from Gus for 100g,1,125,45,100,,
+Salad,Leek:1;Dandelion:1;Vinegar:1,Receiving it in the mail after getting Emily up to 3+ hearts,1,110,50,113,,
+Cheese Cauliflower,Cauliflower:1;Cheese:1,Receiving it in the mail after getting Pam up to 3+ hearts,1,300,62,138,,
+Baked Fish,Sunfish:1;Bream:1;Wheat Flour:1,Watching The Queen of Sauce on day 7 of Summer in Year 1,1,100,33,75,,
+Parsnip Soup,Parsnip:1;Milk:1;Vinegar:1,Receiving it in the mail after getting Caroline up to 3+ hearts,1,120,38,85,,
+Vegetable Medley,Tomato:1;Beet:1,Receiving it in the mail after getting Caroline up to 7+ hearts,1,120,74,165,,
+Complete Breakfast,Fried Egg:1;Milk:1;Hashbrowns:1;Pancakes:1,Watching The Queen of Sauce on day 21 of Spring in Year 2,1,350,90,200,Farming +2;Max Energy +50,7m
+Fried Calamari,Squid:1;Wheat Flour:1;Oil:1,Receiving it in the mail after getting Jodi up to 3+ hearts,1,150,36,80,,
+Strange Bun,Wheat Flour:1;Periwinkle:1;Void Mayonnaise:1,Receiving it in the mail after getting Shane up to 7+ hearts,1,225,45,100,,
+Lucky Lunch,Sea Cucumber:1;Tortilla:1;Blue Jazz:1,Watching The Queen of Sauce on day 28 of Spring in Year 2,1,250,45,100,Luck +3,11m 11s
+Fried Mushroom,Common Mushroom:1;Morel:1;Oil:1,Receiving it in the mail after getting Demetrius up to 3+ hearts,1,200,60,135,Attack +2,7m
+Pizza,Wheat Flour:1;Tomato:1;Cheese:1,Watching The Queen of Sauce on day 7 of Spring in Year 2 or purchasing it from Gus for 100g,1,300,67,150,,
+Bean Hotpot,Green Bean:2,Receiving it in the mail after getting Clint up to 7+ hearts,1,100,56,125,Max Energy +30;Magnetism +32,7m
+Glazed Yams,Yam:1;Sugar:1,Watching The Queen of Sauce on day 21 of Fall in Year 1,1,200,90,200,,
+Carp Surprise,Carp:4,Watching The Queen of Sauce on day 7 of Summer in Year 2,1,150,40,90,,
+Hashbrowns,Potato:1;Oil:1,Watching The Queen of Sauce on day 14 of Spring in Year 2 or purchasing it from Gus for 100g,1,120,40,90,Farming +1,5m 35s
+Pancakes,Wheat Flour:1;Egg:1,Watching The Queen of Sauce on day 14 of Summer in Year 1 or purchasing it from Gus for 100g,1,80,40,90,Foraging +2,11m 11s
+Salmon Dinner,Salmon:1;Amaranth:1;Kale:1,Receiving it in the mail after getting Gus up to 3+ hearts,1,300,56,125,,
+Fish Taco,Tuna:1;Tortilla:1;Red Cabbage:1;Mayonnaise:1,Receiving it in the mail after getting Linus up to 7+ hearts,1,500,74,165,Fishing +2,7m
+Crispy Bass,Largemouth Bass:1;Wheat Flour:1;Oil:1,Receiving it in the mail after getting Kent up to 3+ hearts,1,150,40,90,Magnetism +64,7m
+Pepper Poppers,Hot Pepper:1;Cheese:1,Receiving it in the mail after getting Shane up to 3+ hearts,1,200,58,130,Farming +2;Speed +1,7m
+Bread,Wheat Flour:1,Watching The Queen of Sauce on day 28 of Summer in Year 1 or purchasing i from Gus for 100g,1,60,22,50,,
+Tom Kha Soup,Coconut:1;Shrimp:1;Common Mushroom:1,Receiving it in the mail after getting Sandy up to 7+ hearts,1,250,78,175,Farming +2;Max Energy +30,7m
+Trout Soup,Rainbow Trout:1;Green Algae:1,Watching The Queen of Sauce on day 14 of Fall in Year 1,1,100,45,100,Fishing +1,4m 39s
+Chocolate Cake,Wheat Flour:1;Sugar:1;Egg:1,Watching The Queen of Sauce on day 14 of Winter in Year 1,1,200,67,150,,
+Pink Cake,Melon:1;Wheat Flour:1;Sugar:1;Egg:1,Watching The Queen of Sauce on day 21 of Summer in Year 2,1,480,112,250,,
+Rhubarb Pie,Rhubarb:1;Wheat Flour:1;Sugar:1,Receiving it in the mail after getting Marnie up to 7+ hearts,1,400,96,215,,
+Cookie,Wheat Flour:1;Sugar:1;Egg:1,Triggering Evelyn's 4-Heart Event,1,140,40,90,,
+Spaghetti,Wheat Flour:1;Tomato:1,Receiving it in the mail after getting Lewis up to 3+ hearts,1,120,33,75,,
+Fried Eel,Eel:1;Oil:1,Receiving it in the mail after getting George up to 3+ hearts,1,120,33,75,Luck +1,7m
+Spicy Eel,Eel:1;Hot Pepper:1,Receiving it in the mail after getting George up to 7+ hearts,1,175,51,115,Luck +1;Speed +1,7m
+Sashimi,Any Fish:1,Receiving it in the mail after getting Linus up to 3+ hearts,1,75,33,75,,
+Maki Roll,Any Fish:1;Seaweed:1;Rice:1,Watching The Queen of Sauce on day 21 of Summer in Year 1 or purchasing it from Gus for 100g,1,220,45,100,,
+Tortilla,Corn:1,Watching The Queen of Sauce on day 7 of Fall in Year 1 or purchasing it from Gus for 100g,1,50,22,50,,
+Red Plate,Red Cabbage:1;Radish:1,Receiving it in the mail after getting Emily up to 7+ hearts,1,400,108,240,Max Energy +50,3m 30s
+Eggplant Parmesan,Eggplant:1;Tomato:1,Receiving it in the mail after getting Lewis up to 7+ hearts,1,200,78,175,Mining +1;Defense +3,4m 39s
+Rice Pudding,Milk:1;Sugar:1;Rice:1,Receiving it in the mail after getting Evelyn up to 7+ hearts,1,260,51,115,,
+Ice Cream,Milk:1;Sugar:1,Receiving it in the mail after getting Jodi up to 7+ hearts,1,120,45,100,,
+Blueberry Tart,Blueberry:1;Wheat Flour:1;Sugar:1;Egg:1,Receiving it in the mail after getting Pierre up to 3+ hearts,1,150,56,125,,
+Autumn's Bounty,Yam:1;Pumpkin:1,Receiving it in the mail after getting Demetrius up to 7+ hearts,1,350,99,220,Foraging +2;Defense +2,7m 41s
+Pumpkin Soup,Pumpkin:1;Milk:1,Receiving it in the mail after getting Robin up to 7+ hearts,1,300,90,200,Defense +2;Luck +2,7m 41s
+Super Meal,Bok Choy:1;Cranberries:1;Artichoke:1,Receiving it in the mail after getting Kent up to 7+ hearts,1,220,72,160,Max Energy +40;Speed +1,3m 30s
+Cranberry Sauce,Cranberries:1;Sugar:1,Receiving it in the mail after getting Gus up to 7+ hearts,1,120,56,125,Mining +2,3m 30s
+Stuffing,Bread:1;Cranberries:1;Hazelnut:1,Receiving it in the mail after getting Pam up to 7+ hearts,1,165,76,170,Defense +2,5m 35s
+Farmer's Lunch,Omelet:1;Parsnip:1,Reaching farming level 3,1,150,90,200,Farming +3,5m 35s
+Survival Burger,Bread:1;Cave Carrot:1;Eggplant:1,Reaching foraging level 8,1,180,56,125,Foraging +3,5m 35s
+Dish O' The Sea,Sardine:2;Hashbrowns:1,Reaching fishing level 3,1,220,67,150,Fishing +3,5m 35s
+Miner's Treat,Cave Carrot:2;Sugar:1;Milk:1,Reaching mining level 3,1,200,56,125,Mining +3;Magnetism +32,5m 35s
+Roots Platter,Cave Carrot:1;Winter Root:1,Reaching combat level 3,1,100,56,125,Attack +3,5m 35s
+Triple Shot Espresso,Coffee:3,Purchasing it from Gus for 5000g,1,450,3,8,Speed +1,4m 12s
+Seafoam Pudding,Flounder:1;Midnight Carp:1;Squid Ink:1,Reaching fishing level 9,1,300,78,175,Fishing +4,3m 30s
+Algae Soup,Green Algae:4,Receiving it in the mail after getting Clint up to 3+ hearts,1,100,33,75,,
+Pale Broth,White Algae:2,Receiving it in the mail after getting Marnie up to 3+ hearts,1,150,56,125,,
+Plum Pudding,Wild Plum:2;Wheat Flour:1;Sugar:1,Watching The Queen of Sauce on day 7 of Winter in Year 1,1,260,78,175,,
+Artichoke Dip,Artichoke:1;Milk:1,Watching The Queen of Sauce on day 28 of Fall in Year 1,1,210,45,100,,
+Stir Fry,Cave Carrot:1;Common Mushroom:1;Kale:1;Oil:1,Watching The Queen of Sauce on day 7 of Spring in Year 1,1,335,90,200,,
+Roasted Hazelnuts,Hazelnut:3,Watching The Queen of Sauce on day 28 of Summer in Year 2,1,270,78,175,,
+Pumpkin Pie,Pumpkin:1;Wheat Flour:1;Milk:1;Sugar:1,Watching The Queen of Sauce on day 21 of Winter in Year 1,1,385,101,225,,
+Radish Salad,Oil:1;Vinegar:1;Radish:1,Watching The Queen of Sauce on day 21 of Spring in Year 1,1,300,90,200,,
+Fruit Salad,Blueberry:1;Melon:1;Apricot:1,Watching The Queen of Sauce on day 7 of Fall in Year 2,1,450,118,263,,
+Blackberry Cobbler,Blackberry:2;Sugar:1;Wheat Flour:1,Watching The Queen of Sauce on day 14 of Fall in Year 2,1,260,78,175,,
+Cranberry Candy,Cranberries:1;Apple:1;Sugar:1,Watching The Queen of Sauce on day 28 of Winter in Year 1,1,175,56,125,,
+Bruschetta,Bread:1;Oil:1;Tomato:1,Watching The Queen of Sauce on day 21 of Winter in Year 2,1,210,50,113,,
+Coleslaw,Red Cabbage:1;Vinegar:1;Mayonnaise:1,Watching The Queen of Sauce on day 14 of Spring in Year 1,1,345,95,213,,
+Fiddlehead Risotto,Oil:1;Fiddlehead Fern:1;Garlic:1,Watching The Queen of Sauce on day 28 of Fall in Year 2,1,350,101,225,,
+Poppyseed Muffin,Poppy:1;Wheat Flour:1;Sugar:1,Watching The Queen of Sauce on day 7 of Winter in Year 2,1,250,67,150,,
+Chowder,Clam:1;Milk:1,Receiving it in the mail after getting Willy up to 3+ hearts,1,135,101,225,Fishing +1,16m 47s
+Fish Stew,Crayfish:1;Mussel:1;Periwinkle:1;Tomato:1,Receiving it in the mail after getting Willy up to 7+ hearts,1,175,101,225,Fishing +3,16m 47s
+Escargot,Snail:1;Garlic:1,Receiving it in the mail after getting Willy up to 5+ hearts,1,125,101,225,Fishing +2,16m 47s
+Lobster Bisque,Lobster:1;Milk:1,Watching The Queen of Sauce on day 14 of Winter in Year 2 or receiving it in the mail after getting Willy up to 9+ hearts,1,205,101,225,Fishing +3;Max Energy +50,16m 47s
+Maple Bar,Maple Syrup:1;Sugar:1;Wheat Flour:1,Watching The Queen of Sauce on day 14 of Summer in Year 2,1,300,101,225,Farming +1;Fishing +1;Mining +1,16m 47s
+Crab Cakes,Crab:1;Wheat Flour:1;Egg:1;Oil:1,Watching The Queen of Sauce on day 21 of Fall in Year 2,1,275,101,225,Speed +1;Defense +1,16m 47s
+Shrimp Cocktail,Tomato:1;Shrimp:1;Wild Horseradish:1,Watching The Queen of Sauce on day 28 of Winter in Year 2,1,160,101,225,Fishing +1;Luck +1,10m 2s
+Ginger Ale,Ginger:3;Sugar:1,Purchasing it from the Dwarf Shop in Volcano Dungeon for 1000g,1,200,28,63,Luck +1,5m
+Banana Pudding,Banana:1;Milk:1;Sugar:1,Receiving it from the Island Trader in exchange for 30 Bone Fragments,1,260,56,125,Mining +1;Luck +1;Defense +1,5m 1s
+Mango Sticky Rice,Mango:1;Coconut:1;Rice:1,Receiving it in the mail after getting Leo up to 7+ hearts,1,250,50,113,Defense +3,5m 1s
+Poi,Taro Root:4,Receiving it in the mail after getting Leo up to 3+ hearts,1,400,33,75,,
+Tropical Curry,Coconut:1;Pineapple:1;Hot Pepper:1,Purchasing it from Gus on the Ginger Island Resort for 2000g,1,500,67,150,Foraging +4,5m 1s
+Squid Ink Ravioli,Squid Ink:1;Wheat Flour:1;Tomato:1,Reaching combat level 9,1,150,56,125,Mining +1;Squid Ink Ravioli Buff,4m 39s (Mining) and 2m 59s (Squid Ink Ravioli Buff)
+Moss Soup,Moss:20,Reaching foraging level 3,1,80,31,70,,

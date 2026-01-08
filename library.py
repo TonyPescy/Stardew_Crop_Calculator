@@ -66,11 +66,11 @@ def calc_cost(seeds_needed, fertilizer, crop):
 
     return total_cost
 
-# Determines what the user would like our app to do (Crop/field Calc, Crafting calc, cooking calc[WIP] )
+# Determines what the user would like our app to do (Crop/field Calc, Crafting calc, cooking calc, artisan item calc[WIP] )
 # Returns String of calculator to be run
 def get_task():
     # List of all current tasks app can do
-    task_list = ['Crop Field Calculator', 'Crafting Calculator']
+    task_list = ['Crop Field Calculator', 'Crafting Calculator', 'Cooking Calculator']
     print('From the following options please pick which calculator you would like to use:')
     while True:
         for i in range(1, len(task_list)+1):

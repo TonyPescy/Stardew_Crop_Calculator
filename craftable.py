@@ -7,7 +7,7 @@
 # Constant
 CRAFTABLE_TYPES = ['Artisan Equipment', 'Bombs', 'Consumables', 'Decor', 'Fences', 'Fishing Items', 'Furniture', 'Lighting', 'Misc', 'Refining Equipment', 'Rings', 'Seeds', 'Signs', 'Sprinklers', 'Storage Equipment']
 
-# Import
+# Imports
 from library import TO_INT_FAIL
 from math import ceil
 
@@ -200,8 +200,7 @@ def get_craftable_item():
     # Return item object from response
     return item_quantity_tuple
 
-# Gets all craftable items user wants to craft
-#
+# Gets all craftable items user wants to craft and displays them
 def crafting_calculator():
     # Initlize list of users tuples (items, quantity) to craft
     items_to_craft = []
@@ -244,4 +243,3 @@ def crafting_calculator():
         else:
             temp_recipe_source = temp_recipe_source[0].lower() + temp_recipe_source[1:] # Sentence format fix
             print('\tYou receive this recipe by {}!'.format(temp_recipe_source))
-    #print('That is what you would need to craft your selected item(s).')
