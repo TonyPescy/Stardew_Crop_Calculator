@@ -1,7 +1,7 @@
 ###########################################################################################################################################
 # Title: main
 # Author: Tony Pescatore
-# Description: Main will utilize functions from other .py files and inputs from the user to generate the cost of planting all your crops.
+# Description: Main will utilize functions from other .py files and inputs from the user to allow use of the calculators.
 ###########################################################################################################################################
 
 # Imports
